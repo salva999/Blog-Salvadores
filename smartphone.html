@@ -1,42 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+        <title>Blog Salvadores</title>
+        <!-- Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'>
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="./theme/css/main.css" type="text/css" />
+        <link rel="stylesheet" href="./theme/css/pygments.css" type="text/css" />
+        <link rel="stylesheet" href="./theme/css/font-awesome.css" type="text/css" />
         <meta charset="utf-8" />
-        <title>Smartphone</title>
-        <link rel="stylesheet" href="./theme/css/main.css" />
+      
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+        <!-- Javascript-->
+        <script async src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+        <script async type="text/javascript"> 
+        $(function() {
+            function invisibleMenu() {
+                var now = 0;
+                var pixels = 300;
+                var opacity = -1;
+
+                var move = function() {
+                    now = $(window).scrollTop();
+                    if (now > pixels && opacity !== 0)
+                        opacity = 0;
+                    else if (now < pixels){
+                        // Depends on the position not if scrolls down or up
+                        opacity = (1 - now/pixels);
+                    }
+                    $("div.navigation").css({"opacity": opacity});
+                }
+                $(window).scroll(move);
+                move();
+            }
+            invisibleMenu();
+          });
+          </script> 
 </head>
 
 <body id="index" class="home">
+     <div class="navigation">
+        <ol class="nav">
+          <li class="current"><a href=".">Blog</a> </li>
+          <li><a href="./archives.html">Archive</a></li>
+          <li><a href="./tags.html">Tags</a> </li>
+          <li><a href="">RSS</a> </li>
+        </ol>
+      </div>
         <header id="banner" class="body">
-                <h1><a href="./">Blog Salvadores </a></h1>
-                <nav><ul>
-                    <li class="active"><a href="./category/misc.html">misc</a></li>
-                </ul></nav>
+                <div class="banner"><a href=".">Blog Salvadores <strong></strong></a></div>
         </header><!-- /#banner -->
+        <nav id="menu"><ul>
+        </ul></nav><!-- /#menu -->
+        <div class="box">
 <section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="./smartphone.html" rel="bookmark"
-           title="Permalink to Smartphone">Smartphone</a></h1>
-    </header>
-
-    <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-10-23T00:00:00+02:00">
-                Published: mar 23 octubre 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="./author/salvador-lobato.html">Salvador Lobato</a>
-        </address>
-<p>In <a href="./category/misc.html">misc</a>.</p>
-
-</footer><!-- /.post-info -->      <h2>Huawei Mate 20 Pro: más rápido, más potente y más inteligente</h2>
+  <header class="post">
+    <h1 class="entry-title">
+      Smartphone
+    </h1>
+  </header>
+  <footer class="post-info">
+    <abbr>
+      mar 23 octubre 2018 
+         By <a class="url fn" href="./author/salvador-lobato.html">Salvador Lobato</a>
+  
+    </abbr>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <h2>Huawei Mate 20 Pro: más rápido, más potente y más inteligente</h2>
 <p>Huawei incorpora un nuevo doble procesador neural e inaugura la Inteligencia Artificial 2.0.</p>
 <p>Después de haber vendido más de 10 millones de unidades de su último terminal de la serie P, Huawei se dispone ahora a dar una nueva vuelta de tuerca a su receta de éxito. Hace apenas unos meses, el P20 Pro se convirtió, sin duda, en el «smartphone» de referencia en cuanto a fotografía móvil se refiere. Sus impresionantes prestaciones, de la mano del procesador Kirin 970, que incluía un módulo de Inteligencia Artificial (IA) capaz de llevar la calidad fotográfica a extremos nunca vistos en un teléfono móvil, convirtieron al P20 Pro en uno de los «gadgets» más deseados del año. A la altura, incluso, de los hasta ese momento imbatibles e icónicos iPhones de Apple.</p>
 <p>Para más información: <a href="https://www.abc.es/tecnologia/moviles/telefonia/abci-huawei-mate-20-mas-rapido-mas-potente-y-mas-inteligente-201810161924_noticia.html">Huawei Mate 20 Pro</a></p>
@@ -150,37 +184,32 @@
 <li>Memoria RAM: 3 GB</li>
 <li>Tarjetas SIM: Nano SIM</li>
 </ul>
-    </div><!-- /.entry-content -->
-
-  </article>
+  </div><!-- /.entry-content -->
 </section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
+            <hr/>
+            <footer id="contentinfo" class="footer">
+                <div>
+                    <a href=".">Salvador Lobato</a> (2012)
+                </div>
+                <div>
+                    This work is licensed under <a rel="license" href="http://opensource.org/licenses/bsd-3-clause">3 clause BSD</a>. Source code available on <a rel="source code" href="https://github.com/slok/blog">Github</a>
+                </div>
+                <div>
+                    powered by <a href="http://getpelican.com/">Pelican</a>
+                    and <a href="http://python.org">Python</a>. 
+                    <a href="http://github.com/slok/iris">Theme</a> by <a href="http://xlarrakoetxea.org">Xabier Larrakoetxea</a> based on <a href="http://flask.pocoo.org/">Flask</a> theme
+                </div>
+                <div>
+                    Social icons (font awesome) by <a href="http://fortawesome.github.com/Font-Awesome/"> fort awesome</a>.
+                    <a href="http://www.google.com/webfonts/specimen/The+Girl+Next+Door">Title</a>, <a href="http://www.google.com/webfonts/specimen/Marcellus">headers</a> and <a href="http://www.google.com/webfonts/specimen/Inconsolata">source code</a> fonts by google fonts
+                </div>
                 <div class="social">
-                        <h2>social</h2>
-                        <ul>
-
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
+                        <a href="#"><i class="icon-You can add links in your config file"></i>  </a>
+                        <a href="#"><i class="icon-Another social link"></i>  </a>
+                </div>
+            </footer><!-- /#contentinfo -->
+        </div>
+        <!--Add statistycs-->
 
 </body>
 </html>

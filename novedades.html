@@ -1,42 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+        <title>Blog Salvadores</title>
+        <!-- Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'>
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="./theme/css/main.css" type="text/css" />
+        <link rel="stylesheet" href="./theme/css/pygments.css" type="text/css" />
+        <link rel="stylesheet" href="./theme/css/font-awesome.css" type="text/css" />
         <meta charset="utf-8" />
-        <title>Novedades</title>
-        <link rel="stylesheet" href="./theme/css/main.css" />
+      
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+        <!-- Javascript-->
+        <script async src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+        <script async type="text/javascript"> 
+        $(function() {
+            function invisibleMenu() {
+                var now = 0;
+                var pixels = 300;
+                var opacity = -1;
+
+                var move = function() {
+                    now = $(window).scrollTop();
+                    if (now > pixels && opacity !== 0)
+                        opacity = 0;
+                    else if (now < pixels){
+                        // Depends on the position not if scrolls down or up
+                        opacity = (1 - now/pixels);
+                    }
+                    $("div.navigation").css({"opacity": opacity});
+                }
+                $(window).scroll(move);
+                move();
+            }
+            invisibleMenu();
+          });
+          </script> 
 </head>
 
 <body id="index" class="home">
+     <div class="navigation">
+        <ol class="nav">
+          <li class="current"><a href=".">Blog</a> </li>
+          <li><a href="./archives.html">Archive</a></li>
+          <li><a href="./tags.html">Tags</a> </li>
+          <li><a href="">RSS</a> </li>
+        </ol>
+      </div>
         <header id="banner" class="body">
-                <h1><a href="./">Blog Salvadores </a></h1>
-                <nav><ul>
-                    <li class="active"><a href="./category/misc.html">misc</a></li>
-                </ul></nav>
+                <div class="banner"><a href=".">Blog Salvadores <strong></strong></a></div>
         </header><!-- /#banner -->
+        <nav id="menu"><ul>
+        </ul></nav><!-- /#menu -->
+        <div class="box">
 <section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="./novedades.html" rel="bookmark"
-           title="Permalink to Novedades">Novedades</a></h1>
-    </header>
-
-    <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-10-23T00:00:00+02:00">
-                Published: mar 23 octubre 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="./author/salvador-lobato.html">Salvador Lobato</a>
-        </address>
-<p>In <a href="./category/misc.html">misc</a>.</p>
-
-</footer><!-- /.post-info -->      <h2>Los ciberdelincuentes preparan nuevos sabotajes a sistemas industriales críticos</h2>
+  <header class="post">
+    <h1 class="entry-title">
+      Novedades
+    </h1>
+  </header>
+  <footer class="post-info">
+    <abbr>
+      mar 23 octubre 2018 
+         By <a class="url fn" href="./author/salvador-lobato.html">Salvador Lobato</a>
+  
+    </abbr>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <h2>Los ciberdelincuentes preparan nuevos sabotajes a sistemas industriales críticos</h2>
 <p>El sucesor de BlackEnergy, que dejó sin luz a 230.000 personas en Ucrania en 2015, ha desarrollado un «arsenal» de herramientas para atentar contra nuevos objetivos europeos, según ha desvelado Eset, el mayor fabricante continental de software de seguridad.</p>
 <p>BlackEnergy es un troyano de alto nivel utilizado contra objetivos políticamente sensibles y sistemas de control industrial. La primera aparición data de 2007 en Letonia, la segunda un año después en Georgia y tras años de letargo reapareció en 2015 atacando medios de comunicación y empresas de energía en Ucrania. Lo hizo en pleno conflicto territorial con Rusia. Y el código malicioso, el virus, se presentó más potente y mejorado. No solo con la capacidad reconocida de borrar archivos que afectan al sistema de arranque, sino con un componente particular capaz de sabotear sistemas industriales críticos.</p>
 <p>Para más información: <a href="https://www.hoy.es/tecnologia/internet/ciberdelincuentes-preparan-nuevos-sabotajes-20181017115849-ntrc.html">Ciberdelincuentes</a></p>
@@ -53,37 +87,32 @@
 <p>Vamos a echar un vistazo a los poderes del nuevo Samsung QLED 8K. Pero si realmente quieres saberlo todo sobre cómo está la tecnología 8K hoy en día, te recomendamos echar un vistazo a este artículo:</p>
 <p><a href="https://computerhoy.com/noticias/industria/televisores-8k-retos-tecnologicos-disponibilidad-precio-todo-que-debes-saber-295899">Samsung QLED 8K</a></p>
 <p><img alt="imagen" src="https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/950/public/media/image/2018/10/primer-televisor-8k-qled-samsung-ya-tiene-precio-costara-15000-dolares.jpg?itok=ASOsflsH"></p>
-    </div><!-- /.entry-content -->
-
-  </article>
+  </div><!-- /.entry-content -->
 </section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
+            <hr/>
+            <footer id="contentinfo" class="footer">
+                <div>
+                    <a href=".">Salvador Lobato</a> (2012)
+                </div>
+                <div>
+                    This work is licensed under <a rel="license" href="http://opensource.org/licenses/bsd-3-clause">3 clause BSD</a>. Source code available on <a rel="source code" href="https://github.com/slok/blog">Github</a>
+                </div>
+                <div>
+                    powered by <a href="http://getpelican.com/">Pelican</a>
+                    and <a href="http://python.org">Python</a>. 
+                    <a href="http://github.com/slok/iris">Theme</a> by <a href="http://xlarrakoetxea.org">Xabier Larrakoetxea</a> based on <a href="http://flask.pocoo.org/">Flask</a> theme
+                </div>
+                <div>
+                    Social icons (font awesome) by <a href="http://fortawesome.github.com/Font-Awesome/"> fort awesome</a>.
+                    <a href="http://www.google.com/webfonts/specimen/The+Girl+Next+Door">Title</a>, <a href="http://www.google.com/webfonts/specimen/Marcellus">headers</a> and <a href="http://www.google.com/webfonts/specimen/Inconsolata">source code</a> fonts by google fonts
+                </div>
                 <div class="social">
-                        <h2>social</h2>
-                        <ul>
-
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
+                        <a href="#"><i class="icon-You can add links in your config file"></i>  </a>
+                        <a href="#"><i class="icon-Another social link"></i>  </a>
+                </div>
+            </footer><!-- /#contentinfo -->
+        </div>
+        <!--Add statistycs-->
 
 </body>
 </html>
